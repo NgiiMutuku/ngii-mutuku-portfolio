@@ -1,3 +1,4 @@
+
 import { ArrowUpRight, Github } from "lucide-react";
 import { projects } from "@/data/config";
 import SectionHeading from "./SectionHeading";
@@ -8,8 +9,9 @@ export default function Projects() {
       <SectionHeading
         eyebrow="Selected work"
         title="Projects"
-        description="A small selection of things I've built recently."
+        description="A selection of my data analysis and reporting work."
       />
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((p) => (
           <article
@@ -24,11 +26,16 @@ export default function Projects() {
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
+
             <div className="flex flex-col flex-1 p-5">
-              <h3 className="font-display text-lg font-semibold mb-2">{p.title}</h3>
+              <h3 className="font-display text-lg font-semibold mb-2">
+                {p.title}
+              </h3>
+
               <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                 {p.description}
               </p>
+
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {p.tags.map((t) => (
                   <span
@@ -39,23 +46,29 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
               <div className="flex items-center gap-4 text-sm">
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1 hover:text-muted-foreground transition-colors"
-                >
-                  Live <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Github className="h-3.5 w-3.5" /> Code
-                </a>
+                {p.demo && (
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1 hover:text-muted-foreground transition-colors"
+                  >
+                    Live <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
+
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Github className="h-3.5 w-3.5" /> Code
+                  </a>
+                )}
               </div>
             </div>
           </article>

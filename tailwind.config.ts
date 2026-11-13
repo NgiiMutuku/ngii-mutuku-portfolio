@@ -12,9 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["'Space Grotesk'", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-      },
+  sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+  display: ["'Space Grotesk'", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+  elegant: ["'Playfair Display'", "Georgia", "serif"],
+},
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
